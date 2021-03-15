@@ -7,6 +7,7 @@ public class playerControl : MonoBehaviour
     [SerializeField] Camera Cam;
     Transform CamTransform;
     CharacterController CC;
+    public float speed;
     Animator Anim;
     bool isMoving;
     // Start is called before the first frame update
@@ -25,9 +26,9 @@ public class playerControl : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        CC.Move(transform.forward*Input.GetAxis("Vertical")*Time.deltaTime);
+        CC.Move(transform.forward*Input.GetAxis("Vertical")*Time.deltaTime*speed);
         CC.Move(transform.right * Input.GetAxis("Horizontal") * Time.deltaTime);
-        isMoving = (Input.GetAxis("Vertical") + Input.GetAxis("Horizontal") > 0);
+        isMoving = (Input.GetAxis("Vertical") + Input.GetAxis("Horizontal") != 0);
 
         Anim.SetBool("moving", isMoving);
     }
