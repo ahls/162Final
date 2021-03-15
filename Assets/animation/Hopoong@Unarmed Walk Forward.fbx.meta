@@ -26,7 +26,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -105,7 +105,112 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Hopoong@Unarmed Walk Forward(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface2
+      parentName: Hopoong@Unarmed Walk Forward(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hip
+      parentName: Hopoong@Unarmed Walk Forward(Clone)
+      position: {x: 0.0000000013387762, y: 0.033006795, z: -0.00016570065}
+      rotation: {x: 0.6992079, y: -0.7149185, z: -0.0000000031096303, w: -0.0000000010049912}
+      scale: {x: 1, y: 1, z: 1}
+    - name: lowerBack
+      parentName: Hip
+      position: {x: -0.011421405, y: 1.9428903e-18, z: 0}
+      rotation: {x: -0.9998923, y: 0.014680147, z: 0.0000000028780258, w: 0.000000003594862}
+      scale: {x: 0.9999999, y: 1, z: 0.99999976}
+    - name: chest
+      parentName: lowerBack
+      position: {x: -0.011841799, y: 1.6888816e-17, z: -0.00078968}
+      rotation: {x: -0.0000000021447557, y: 0.000000001967321, z: 0.67596644, w: 0.73693246}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: leftShoulder
+      parentName: chest
+      position: {x: -0.013914981, y: 8.6042285e-18, z: 1.3465819e-19}
+      rotation: {x: 0.000000013882618, y: -0.0000000141115075, z: 0.079004705, w: 0.9968743}
+      scale: {x: 1, y: 1.0000001, z: 0.9999997}
+    - name: leftElbow
+      parentName: leftShoulder
+      position: {x: -0.010887791, y: 1.6653345e-18, z: -2.1752477e-19}
+      rotation: {x: 0.00028634988, y: -0.022945248, z: -0.068151325, w: 0.99741113}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000005}
+    - name: leftWrist
+      parentName: leftElbow
+      position: {x: -0.01319725, y: -4.5493304e-18, z: 0.0013485212}
+      rotation: {x: -0.00000002287324, y: -0.0000000025424045, z: 0.07773698, w: 0.9969739}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: leftHand
+      parentName: leftWrist
+      position: {x: -0.004354131, y: 1.7902346e-17, z: -7.250826e-20}
+      rotation: {x: -0.0681485, y: -0.99767524, z: 0.000000047052886, w: 0.0000000031734124}
+      scale: {x: 0.9999997, y: 1.0000002, z: 0.9999996}
+    - name: rightShoulder
+      parentName: chest
+      position: {x: 0.013741204, y: 0.0021922586, z: 2.7755574e-18}
+      rotation: {x: -1, y: -0.000015676018, z: -1.5440145e-10, w: -0.000000023355982}
+      scale: {x: 0.99999994, y: 1.0000004, z: 1.0000001}
+    - name: rightElbow
+      parentName: rightShoulder
+      position: {x: 0.010887791, y: -8.881784e-18, z: -2.7755574e-18}
+      rotation: {x: 0.0002863664, y: -0.022945281, z: -0.06815126, w: 0.9974111}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000004}
+    - name: rightWrist
+      parentName: rightElbow
+      position: {x: 0.01319725, y: 1.9758622e-11, z: -0.0013485212}
+      rotation: {x: 0.000000021402654, y: 0.000000050045127, z: 0.07773693, w: 0.99697393}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000006}
+    - name: rightHand
+      parentName: rightWrist
+      position: {x: 0.004354131, y: -1.7763568e-17, z: -1.7820056e-12}
+      rotation: {x: -0.06814839, y: -0.99767524, z: 0.000000006061001, w: 0.000000007647708}
+      scale: {x: 0.99999994, y: 1.0000002, z: 0.99999994}
+    - name: neck
+      parentName: chest
+      position: {x: -0.0005881697, y: 0.0052792216, z: -0.00070635614}
+      rotation: {x: 0.72270995, y: -0.69115156, z: -0.000000008916332, w: -0.000000007520226}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999964}
+    - name: head
+      parentName: neck
+      position: {x: -0.005316104, y: 0.000014049136, z: -0.000587949}
+      rotation: {x: -0.72270995, y: 0.69115156, z: 2.1296667e-10, w: 2.6462563e-10}
+      scale: {x: 1, y: 0.9999998, z: 1.0000001}
+    - name: leftButt
+      parentName: Hip
+      position: {x: 0.005823451, y: 0.006977242, z: 0}
+      rotation: {x: 0.0000000028083047, y: -0.0000000035021244, z: 0.9989694, w: 0.045390993}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1.0000001}
+    - name: joint16
+      parentName: leftButt
+      position: {x: -0.011106377, y: 1.01307845e-17, z: 0}
+      rotation: {x: 0.00000000821251, y: -0.00000006980811, z: 0.03429059, w: 0.9994119}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000006}
+    - name: joint18
+      parentName: joint16
+      position: {x: -0.015140199, y: -1.3808399e-17, z: 0}
+      rotation: {x: -0.000000046595588, y: -0.00000000187559, z: -0.9999383, w: 0.011109049}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: rightButt
+      parentName: Hip
+      position: {x: 0.0055077556, y: -0.0072290464, z: 5.551115e-19}
+      rotation: {x: 0.9997312, y: 0.023185907, z: -0.000000014126253, w: 0.000000016932644}
+      scale: {x: 0.9999999, y: 0.9999998, z: 1.0000001}
+    - name: joint17
+      parentName: rightButt
+      position: {x: 0.011106377, y: 4.3576252e-17, z: 0}
+      rotation: {x: 0.00000002021452, y: 0.00000001111698, z: 0.034290545, w: 0.99941194}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: joint19
+      parentName: joint17
+      position: {x: 0.015140199, y: 1.3877788e-17, z: 2.186832e-11}
+      rotation: {x: 0.000000034869906, y: 3.8797665e-10, z: -0.9999383, w: 0.011109083}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.99999994}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -116,7 +221,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
