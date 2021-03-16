@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8505442}
   m_LocalRotation: {x: -0, y: -0, z: 0.8508619, w: 0.5253895}
-  m_LocalPosition: {x: -0.1533773, y: -0.21805382, z: -0.4178009}
+  m_LocalPosition: {x: -0.1533773, y: -0.21805382, z: -0.25699997}
   m_LocalScale: {x: 0.08, y: 0.1, z: 0.08}
   m_Children: []
   m_Father: {fileID: 333999523}
@@ -289,7 +289,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0.0078125, y: 0.0078125, z: 1e-45, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 1.2713e-41, z: 0, w: 1.1267189e+27}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -301,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13346926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.33137727, y: 0.217947, z: 0.85419846}
+  m_LocalPosition: {x: -0.33137727, y: 0.217947, z: 1.015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333999523}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 243889184}
   - component: {fileID: 243889183}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: chimney smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,12 +450,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243889181}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.021, y: 2.441, z: -0.454}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.03637719, y: 0.124198675, z: 2.5960002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 333999523}
-  m_RootOrder: 7
+  m_Father: {fileID: 1315445318}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &243889183
 ParticleSystemRenderer:
@@ -5292,8 +5292,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 333999523}
+  - component: {fileID: 333999525}
+  - component: {fileID: 333999524}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Fireplace Interact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5307,7 +5309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333999522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2696228, y: 31.270054, z: 38.4668}
+  m_LocalPosition: {x: -2.2696228, y: 31.289, z: 38.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 842360715}
@@ -5317,10 +5319,43 @@ Transform:
   - {fileID: 1474472628}
   - {fileID: 421725091}
   - {fileID: 1315445318}
-  - {fileID: 243889182}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &333999524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333999522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e34300b7c838844080269f5d1fa9a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woods:
+  - {fileID: 2137717704}
+  - {fileID: 8505442}
+  - {fileID: 1474472627}
+  - {fileID: 421725090}
+  fireEffect: {fileID: 1315445317}
+  ambientLight: {fileID: 842360713}
+  burningFire: {fileID: 2100000, guid: 881dbdc8d2b3478489bce7319ef66596, type: 2}
+  extinguFire: {fileID: 2100000, guid: 838cd24114901c44281fa4b835c57bf8, type: 2}
+--- !u!135 &333999525
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333999522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &340735274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5437,7 +5472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421725090}
   m_LocalRotation: {x: 0.043863483, y: 0.24747197, z: -0.5914048, w: -0.7662076}
-  m_LocalPosition: {x: -0.032377243, y: -0.25105476, z: -0.35280228}
+  m_LocalPosition: {x: -0.032377243, y: -0.25105476, z: -0.19200134}
   m_LocalScale: {x: 0.08, y: 0.10000001, z: 0.08}
   m_Children: []
   m_Father: {fileID: 333999523}
@@ -10844,6 +10879,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hopoong@Unarmed Walk Forward
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7757564b3a5873a4b9a7014959b0e35a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2371522809598010826, guid: 7757564b3a5873a4b9a7014959b0e35a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11007,7 +11047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842360713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.048377275, y: -0.011053085, z: -0.16080093}
+  m_LocalPosition: {x: -0.048377275, y: -0.011053085, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333999523}
@@ -25642,10 +25682,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315445315}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0573771, y: -0.155, z: -0.32979965}
+  m_LocalPosition: {x: -0.0573771, y: -0.155, z: -0.16899872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 491623061}
+  - {fileID: 243889182}
   m_Father: {fileID: 333999523}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -30523,7 +30564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474472627}
   m_LocalRotation: {x: 0.6939763, y: 0.6718482, z: 0.24694817, w: 0.07767656}
-  m_LocalPosition: {x: -0.18137717, y: -0.26205444, z: -0.34479904}
+  m_LocalPosition: {x: -0.18137717, y: -0.26205444, z: -0.18399811}
   m_LocalScale: {x: 0.07999999, y: 0.1, z: 0.08}
   m_Children: []
   m_Father: {fileID: 333999523}
@@ -35895,7 +35936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137717704}
   m_LocalRotation: {x: -0, y: -0, z: 0.6929899, w: 0.7209473}
-  m_LocalPosition: {x: 0.026622772, y: -0.2690544, z: -0.4178009}
+  m_LocalPosition: {x: 0.026622772, y: -0.2690544, z: -0.25699997}
   m_LocalScale: {x: 0.080000006, y: 0.10000001, z: 0.08}
   m_Children: []
   m_Father: {fileID: 333999523}
