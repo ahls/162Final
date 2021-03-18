@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class fireplaceScript : MonoBehaviour
 {
     bool inRange = false;
@@ -11,9 +11,10 @@ public class fireplaceScript : MonoBehaviour
     [SerializeField] private GameObject ambientLight;
     [SerializeField] private Material burningFire;
     [SerializeField] private Material extinguFire;
+    [SerializeField] private Text text;
     // Start is called before the first frame update
 
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -53,11 +54,17 @@ public class fireplaceScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
+        {
             inRange = true;
+            text.text = "press 'F' to interact with the FIREPLACE";
+        }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
+        {
             inRange = false;
-    }
+            text.text = "";
+        }
+}
 }
