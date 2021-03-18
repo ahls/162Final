@@ -66,5 +66,5 @@ public class fireplaceScript : MonoBehaviour
             inRange = false;
             text.text = "";
         }
-}
+    }
 }
