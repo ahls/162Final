@@ -5,6 +5,7 @@ using UnityEngine;
 public class soundTrigger : MonoBehaviour
 {
     public bool TriggerToBe;
+    public playerControl PC;
     
     // Start is called before the first frame update
     void Start()
@@ -23,5 +24,7 @@ public class soundTrigger : MonoBehaviour
         Debug.Log(other.gameObject.name);
         audiomanager.AM.isOutside = TriggerToBe;
         audiomanager.AM.updateSnowStorm(false);
+        PC.stepUpdate(TriggerToBe);
     }
+    
 }

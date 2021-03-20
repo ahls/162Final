@@ -14,6 +14,8 @@ public class playerControl : MonoBehaviour
     public LayerMask groundMask;
     public float gravity = 9.8f;
     public Vector3 yVelo = Vector3.zero;
+    public AudioSource AS;
+    public AudioClip SnowWalk, CabinWalk;
     bool isMoving;
     bool onGround;
     // Start is called before the first frame update
@@ -52,5 +54,17 @@ public class playerControl : MonoBehaviour
         isMoving = (vertAxis  != 0 || horAxis != 0);
 
         Anim.SetBool("moving", isMoving);
+    }
+    public void stepUpdate(bool isOutside)
+    {
+        if (isOutside)
+            AS.clip = SnowWalk;
+        else
+            AS.clip = CabinWalk;
+    }
+    private void step()
+    {
+        AS.pitch = Random.Range(0.8f, 1.2f);
+        AS.Play();
     }
 }
