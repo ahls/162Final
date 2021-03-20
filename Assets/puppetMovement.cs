@@ -10,41 +10,48 @@ public class puppetMovement : MonoBehaviour
     public Transform[] spawnLocations = new Transform[4];
     Rigidbody RB;
     int stuckCounter;
+    bool gameOver = false;
     Vector3 lastPostion;
+    public AudioSource deathSound;
     // Start is called before the first frame update
     void Start()
     {
-        RB = GetComponent<Rigidbody>();   
+        RB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.LookRotation(player.position,transform.up);
-        RB.MovePosition(Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
-        Vector3 offsetFromLastPosition = lastPostion - transform.position;
-        lastPostion = transform.position;
-        if(offsetFromLastPosition.magnitude <= stuckThreshold)
+        if (!gameOver)
         {
-            stuckCounter++;
-            if(stuckCounter == 50)
-            {//respawn 
-                relocate();
+            transform.rotation = Quaternion.LookRotation(player.position - transform.position, Vector3.up);
+            RB.MovePosition(Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
+            gameOverCheck();
+            Vector3 offsetFromLastPosition = lastPostion - transform.position;
+            lastPostion = transform.position;
+            if (offsetFromLastPosition.magnitude <= stuckThreshold)
+            {
+                stuckCounter++;
+                if (stuckCounter == 50)
+                {//respawn 
+                    relocate();
+                }
             }
-        }
-        else
-        {
-            stuckCounter = 0;
+            else
+            {
+                stuckCounter = 0;
+            }
+
         }
     }
 
     void relocate()
     {
-        float minDist=999;
+        float minDist = 999;
         int bestIndex = 0;
         for (int i = 0; i < 4; i++)
         {
@@ -52,11 +59,20 @@ public class puppetMovement : MonoBehaviour
             if (tempDist < minDist)
             {
                 bestIndex = i;
-            minDist = tempDist;
+                minDist = tempDist;
             }
         }
 
         transform.position = spawnLocations[bestIndex].position;
-        
+
+    }
+    void gameOverCheck()
+    {
+        if ((transform.position - player.position).magnitude <= 0.05f)
+        {
+            gameOver = true;
+            deathSound.Play();
+
+        }
     }
 }
