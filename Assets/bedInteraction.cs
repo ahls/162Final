@@ -9,7 +9,7 @@ public class bedInteraction : MonoBehaviour
     public int lightGoal, lightCurrent;
     public bool fire, door;
     public int curtainGoal, curtainCurrent;
-    int endingTimer = 1000;
+    int endingTimer = 900;
     bool startCountingDown = false;
     public Transform sleepSpot, camSpot, puppetTrans;
     public Transform Player;
@@ -34,7 +34,7 @@ public class bedInteraction : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F))
             {
                 conditionCheck();
-                if(!completed)
+                if(completed)
                 {//ending scene
                     Player.position = sleepSpot.position;
                     Player.rotation = sleepSpot.rotation;
@@ -103,7 +103,7 @@ public class bedInteraction : MonoBehaviour
             }
             else if(endingTimer < 150 )
             {
-                puppet.position += Vector3.up * 0.002f;
+                puppet.position += Vector3.up * 0.003f;
             }
             if(endingTimer == 0)
             {
@@ -134,7 +134,6 @@ public class bedInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.tag == "Player")
         {
             inRange = true;

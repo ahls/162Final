@@ -38,7 +38,6 @@ public class TextDispalyer : MonoBehaviour
         }
         else if(displayTimer <= 0)
         {
-            Debug.Log(displayIndex);
             displayText += storedText[displayIndex];
             displayIndex++;
             displayTimer = displayDelay;

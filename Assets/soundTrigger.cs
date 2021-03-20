@@ -21,7 +21,6 @@ public class soundTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "door") return;
-        Debug.Log(other.gameObject.name);
         audiomanager.AM.isOutside = TriggerToBe;
         audiomanager.AM.updateSnowStorm(false);
         PC.stepUpdate(TriggerToBe);
