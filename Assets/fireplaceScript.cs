@@ -12,6 +12,7 @@ public class fireplaceScript : MonoBehaviour
     [SerializeField] private Material burningFire;
     [SerializeField] private Material extinguFire;
     [SerializeField] private Text text;
+    [SerializeField] private AudioSource fireSound;
     // Start is called before the first frame update
 
     
@@ -35,7 +36,7 @@ public class fireplaceScript : MonoBehaviour
             foreach (GameObject wood in woods)
             {
                 wood.GetComponent<MeshRenderer>().material = burningFire;
-                
+                fireSound.Play();
             }
             fireEffect.Play(true);
         }
@@ -44,7 +45,7 @@ public class fireplaceScript : MonoBehaviour
             foreach (GameObject wood in woods)
             {
                 wood.GetComponent<MeshRenderer>().material = extinguFire;
-
+                fireSound.Stop();
             }
             fireEffect.Stop(true);
         }
