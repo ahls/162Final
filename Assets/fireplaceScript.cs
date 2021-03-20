@@ -21,9 +21,10 @@ public class fireplaceScript : MonoBehaviour
     {
         if (inRange)
         {
-            toggled = !toggled;
             if (Input.GetKeyDown(KeyCode.F))
             {
+                bedInteraction.BI.fire = toggled; // inversed.
+                toggled = !toggled;
                 interact();
             }
         }

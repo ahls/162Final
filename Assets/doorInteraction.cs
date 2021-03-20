@@ -30,6 +30,7 @@ public class doorInteraction : MonoBehaviour
         isClosed = !isClosed;
         Anim.SetTrigger("interact");
         audiomanager.AM.updateSnowStorm(isClosed);
+        bedInteraction.BI.door = isClosed;
     }
     private void OnTriggerEnter(Collider other)
     {

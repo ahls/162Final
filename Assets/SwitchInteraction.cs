@@ -37,10 +37,12 @@ public class SwitchInteraction : MonoBehaviour
         if(lightOn)
         {
             targetLight.material = OnMaterial;
+            bedInteraction.BI.lightCurrent--;
         }
         else
         {
             targetLight.material = OffMaterial;
+            bedInteraction.BI.lightCurrent++;
         }
     }
     private void OnTriggerEnter(Collider other)
