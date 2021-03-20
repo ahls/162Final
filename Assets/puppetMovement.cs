@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class puppetMovement : MonoBehaviour
 {
@@ -71,7 +72,8 @@ public class puppetMovement : MonoBehaviour
         if ((transform.position - player.position).magnitude <= 0.05f)
         {
             gameOver = true;
-            deathSound.Play();
+            //deathSound.Play();
+            SceneManager.LoadScene(sceneName: "Game Over", LoadSceneMode.Single);
 
         }
     }
