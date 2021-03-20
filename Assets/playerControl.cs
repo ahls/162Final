@@ -36,7 +36,6 @@ public class playerControl : MonoBehaviour
         }
         else
         {
-            Debug.Log("floor hit");
             yVelo = Vector3.zero;
         }
 
