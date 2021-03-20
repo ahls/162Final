@@ -429,6 +429,7 @@ MonoBehaviour:
   height: 0.5
   distance: 0.5
   yaw: 0
+  isSitting: 0
 --- !u!81 &27771960
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1353,6 +1354,7 @@ MonoBehaviour:
   AS: {fileID: 0}
   SnowWalk: {fileID: 0}
   CabinWalk: {fileID: 0}
+  isSitting: 0
 --- !u!95 &73162468
 Animator:
   serializedVersion: 3
@@ -5371,10 +5373,10 @@ RectTransform:
   m_Father: {fileID: 1814011579}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 509.1, y: 37.8}
-  m_SizeDelta: {x: 256.43866, y: 30.590977}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -135, y: 38}
+  m_SizeDelta: {x: 256.43872, y: 30.590977}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400734927
 MonoBehaviour:
@@ -36522,10 +36524,10 @@ RectTransform:
   m_Father: {fileID: 1814011579}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -531.4, y: 48.6}
-  m_SizeDelta: {x: 270.6258, y: 82.833176}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 125, y: 49}
+  m_SizeDelta: {x: 270.62573, y: 82.833176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633940119
 MonoBehaviour:
