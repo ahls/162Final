@@ -18,6 +18,7 @@ public class playerControl : MonoBehaviour
     public AudioClip SnowWalk, CabinWalk;
     bool isMoving;
     bool onGround;
+    public bool isSitting;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +30,10 @@ public class playerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        transform.eulerAngles = new Vector3(0, Cam.GetComponent<cameraControl>().yaw, 0);
+        if (!isSitting)
+        {
+            transform.eulerAngles = new Vector3(0, Cam.GetComponent<cameraControl>().yaw, 0);
+        }
         onGround = Physics.CheckSphere(transform.position, groundDistance, groundMask);
         if (!onGround)
         {
@@ -44,7 +47,7 @@ public class playerControl : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
+        if (isSitting) return;
         float vertAxis = Input.GetAxis("Vertical");
         float horAxis = Input.GetAxis("Horizontal");
 
