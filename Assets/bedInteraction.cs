@@ -48,7 +48,8 @@ public class bedInteraction : MonoBehaviour
                     startCountingDown = true;
                     puppet.GetComponent<puppetMovement>().enabled = false;
                     puppet.GetComponent<Rigidbody>().isKinematic = true;
-
+                    inRange = false;
+                    interactionDisplay.text = "";
                 }
                 else
                 {//dispaly missing requirements
