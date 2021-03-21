@@ -13,6 +13,8 @@ public class fireplaceScript : MonoBehaviour
     [SerializeField] private Material extinguFire;
     [SerializeField] private Text text;
     [SerializeField] private AudioSource fireSound;
+    [SerializeField] private Material newPaintingMaterial;
+    [SerializeField] private MeshRenderer PaintMR;
     // Start is called before the first frame update
 
     
@@ -49,6 +51,7 @@ public class fireplaceScript : MonoBehaviour
                 fireSound.Stop();
             }
             fireEffect.Stop(true);
+            PaintMR.material = newPaintingMaterial;
         }
 
         ambientLight.SetActive(toggled);
